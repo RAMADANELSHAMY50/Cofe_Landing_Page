@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cafe Direct – Enjoy your coffee before your activity</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+      --color-brand: #f7941d;
+      --color-brand-dark: #e8820c;
+      --color-cream: #fbead1;
+      --color-ink: #1d1612;
+    }
+  </style>
+  </head>
+
+  <body
+    class="font-sans text-ink bg-gradient-to-b from-[#f5a93f] via-[#f7c576] to-[#fbe3b8] min-h-screen antialiased">
+
+    <div
+      class="mx-auto my-4 max-w-6xl overflow-hidden rounded-[28px] bg-white shadow-2xl relative">
+
+      <!-- ================= HERO ================= -->
+      <section class="bg-[#fdf3e3] pb-80 relative">
+
+        <header
+          class="flex items-center justify-between px-6 md:px-12 py-5 relative z-20">
+
+          <a href="#home">
+            <img src="./src/assets/logo_coffe.svg" alt="Cafe Direct Logo">
+          </a>
+
+          <nav id="nav" class="hidden md:flex items-center gap-8 text-xs">
+            <a href="#home" class="text-brand font-medium">Home</a>
+            <a href="#popular" class="hover:text-brand transition">Our
+              Products</a>
+            <a href="#delivery" class="hover:text-brand transition">Pickup</a>
+            <a href="#about" class="hover:text-brand transition">About</a>
+          </nav>
+
+          <div class="flex items-center gap-4">
+
+            <form id="searchForm"
+              class="hidden sm:flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5">
+
+              <input id="searchInput"
+                type="search"
+                placeholder="Search"
+                aria-label="Search menu"
+                class="w-24 text-xs outline-none bg-transparent">
+            </form>
+
+            <button id="cartBtn" type="button" aria-label="Open shopping cart"
+              class="relative">
+
+              <svg xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24"
+                viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <path
+                  d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18" />
+                <path
+                  d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25" />
+                <circle cx="18" cy="20" r="2" />
+                <circle cx="8" cy="20" r="2" />
+              </svg>
+
+              <span id="cartCount"
+                class="absolute -top-2 -right-2 bg-[#FF902A] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                0
+              </span>
+
+            </button>
+
+          </div>
+        </header>
+
+        <div id="home"
+          class="grid items-center gap-10 px-6 md:px-12 pt-6 md:grid-cols-2">
+
+          <div>
+
+            <h1 class="text-3xl md:text-[34px] leading-tight font-bold">
+              Enjoy your <span class="text-brand">coffee</span><br>
+              before your activity
+            </h1>
+
+            <p class="mt-4 max-w-sm text-[11px] leading-relaxed text-ink/60">
+              Boost your productivity and build your mood with a glass of coffee
+              in the morning.
+            </p>
+
+            <div class="mt-6 flex items-center gap-3">
+
+              <a href="#popular"
+                class="rounded-full bg-ink px-5 py-2 text-xs font-medium text-white hover:bg-brand transition">
+                Order now
+              </a>
+
+              <a href="#about"
+                class="flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs shadow hover:shadow-md transition">
+                <i data-lucide="play" class="size-3 text-brand fill-brand"></i>
+                Our Story
+              </a>
+
+            </div>
+          </div>
+
+          <div
+            class="relative mx-auto grid size-64 sm:size-80 place-items-center rounded-full bg-ink">
+
+            <img data-img="cup"
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=80"
+              alt="Cappuccino"
+              class="size-52 sm:size-64 rounded-full object-cover shadow-2xl">
+
+            <span
+              class="absolute -top-2 left-4 rounded-full bg-white px-4 py-1.5 text-[11px] font-medium shadow">
+              Cappuccino
+            </span>
+
+            <span
+              class="absolute top-6 right-0 flex items-center gap-1 rounded-full bg-brand px-3 py-1 text-[11px] font-semibold text-white">
+              <i data-lucide="star" class="size-3 fill-white"></i>
+              4.8
+            </span>
+
+            <span
+              class="absolute bottom-6 left-0 rounded-full bg-white px-4 py-1.5 text-[11px] font-medium shadow">
+              15k
+            </span>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= POPULAR PRODUCTS ================= -->
+      <section id="popular" class="-mt-30 px-6 md:px-12 relative">
+
+        <div class="rounded-4xl bg-[#F9D9AA] p-4 md:p-5">
+
+          <h2 class="mb-3 text-sm font-semibold -mt-50">
+            Popular Now
+          </h2>
+
+          <div id="popularGrid"
+            class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-12">
+
+            <!-- Product 1 -->
+            <div
+              class="card flex flex-col gap-2 rounded-2xl p-3 border-8 border-white/10 bg-white">
+
+              <div class="relative">
+                <img src="./src/assets/img_product (2).png" alt="Vanilla Latte"
+                  class="w-full">
+                <span
+                  class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                  4.8
+                </span>
+              </div>
+
+              <div
+                class="content font-semibold text-lg flex justify-between items-center">
+                <span>Vanilla Latte</span>
+                <span>21k</span>
+              </div>
+
+              <div class="btn flex justify-between items-center">
+
+                <div class="btn_left flex gap-2">
+                  <button data-size="Hot"
+                    class="variant-btn border rounded-xl p-1 border-[#FFD28F] text-[#FFD28F] w-12">
+                    Hot
+                  </button>
+
+                  <button data-size="Cold"
+                    class="variant-btn border rounded-xl p-1 border-[#FFD28F] text-[#FFD28F] w-12">
+                    Cold
+                  </button>
+                </div>
+
+                <button type="button" aria-label="Add Vanilla Latte to cart"
+                  class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                  <i data-lucide="shopping-cart"></i>
+                </button>
+
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div
+              class="card flex flex-col gap-2 rounded-2xl p-3 border-8 border-white/10 bg-white">
+
+              <div class="relative">
+                <img src="./src/assets/img_product (1).png" alt="Hazelnut Latte"
+                  class="w-full">
+                <span
+                  class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                  4.8
+                </span>
+              </div>
+
+              <div
+                class="content font-semibold text-lg flex justify-between items-center">
+                <span>Hazelnut Latte</span>
+                <span>21k</span>
+              </div>
+
+              <div class="btn flex justify-between items-center">
+
+                <div class="btn_left flex gap-2">
+                  <button data-size="Hot"
+                    class="variant-btn border rounded-xl p-1 border-[#FFD28F] text-[#FFD28F] w-12">
+                    Hot
+                  </button>
+
+                  <button data-size="Cold"
+                    class="variant-btn border rounded-xl p-1 border-[#FFD28F] text-[#FFD28F] w-12">
+                    Cold
+                  </button>
+                </div>
+
+                <button type="button" aria-label="Add Hazelnut Latte to cart"
+                  class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                  <i data-lucide="shopping-cart"></i>
+                </button>
+
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div
+              class="card flex flex-col gap-2 rounded-2xl p-3 border-8 border-white/10 bg-white">
+
+              <div class="relative">
+                <img src="./src/assets/img_product.png" alt="Espresso"
+                  class="w-full">
+                <span
+                  class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                  4.8
+                </span>
+              </div>
+
+              <div
+                class="content font-semibold text-lg flex justify-between items-center">
+                <span>Espresso</span>
+                <span>21k</span>
+              </div>
+
+              <div class="btn flex justify-between items-center">
+
+                <div class="btn_left flex gap-2">
+                  <button data-size="Hot"
+                    class="variant-btn border rounded-xl p-1 border-[#FFD28F] text-[#FFD28F] w-12">
+                    Hot
+                  </button>
+
+                  <button data-size="Cold"
+                    class="variant-btn border rounded-xl p-1 border-[#FFD28F] text-[#FFD28F] w-12">
+                    Cold
+                  </button>
+                </div>
+
+                <button type="button" aria-label="Add Espresso to cart"
+                  class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                  <i data-lucide="shopping-cart"></i>
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PICKUP ================= -->
+      <section id="delivery" class="px-6 md:px-12 py-16 mb-30">
+
+        <h2 class="text-lg font-semibold">
+          How to use pickup
+          <span class="text-brand underline underline-offset-4">
+            service
+          </span>
+        </h2>
+
+        <div class="mt-10 grid gap-10 sm:grid-cols-3">
+
+          <div class="flex flex-col items-center gap-1">
+            <div class="grid size-14 place-items-center">
+              <img src="./src/assets/coffee-cup 2.png" alt="Choose coffee">
+            </div>
+
+            <h3 class="mt-2 text-xs font-semibold">Choose your coffee</h3>
+
+            <p class="text-[10px] text-ink/60">
+              Choose from our coffee menu
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center gap-1">
+            <div class="grid size-14 place-items-center">
+              <img src="./src/assets/food-truck 1.png" alt="Preparing order">
+            </div>
+
+            <h3 class="mt-2 text-xs font-semibold">We prepare your order</h3>
+
+            <p class="text-[10px] text-ink/60">
+              Fresh coffee, prepared for you
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center gap-1">
+            <div class="grid size-14 place-items-center">
+              <img src="./src/assets/coffee-cup 1.png" alt="Pick up coffee">
+            </div>
+
+            <h3 class="mt-2 text-xs font-semibold">Pick up your coffee</h3>
+
+            <p class="text-[10px] text-ink/60">
+              Visit our cafe and enjoy your coffee
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+      <section id="about" class="relative px-6 md:px-12 py-14">
+
+        <div
+          class="absolute inset-x-0 top-1/2 h-80 -translate-y-1/2 bg-cream/70 img-container"></div>
+
+        <div
+          class="relative flex justify-center items-center gap-20 flex-col md:flex-row">
+
+          <img src="./src/assets/unsplash_3n3mPoGko8g.png"
+            alt="Cup of coffee on a table"
+            class="h-72 w-50 rounded-lg object-cover shadow-xl -mt-30">
+
+          <div>
+
+            <h2 class="text-lg font-semibold">About us</h2>
+
+            <h3 class="mt-3 text-xs font-semibold">
+              We provide quality coffee,<br>
+              freshly prepared for pickup.
+            </h3>
+
+            <p class="mt-3 w-80 text-[10px] leading-relaxed text-ink/60">
+              We are a cafe that makes delicious drinks using special recipes.
+              Visit us and enjoy your favorite coffee.
+            </p>
+
+            <button id="aboutBtn" type="button"
+              class="mt-4 rounded-full bg-ink px-4 py-1.5 text-[10px] font-medium text-white hover:bg-brand transition">
+              Read more
+            </button>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SPECIAL MENU ================= -->
+      <section id="special" class="px-6 md:px-12 py-12">
+
+        <h2 class="my-8 text-lg font-semibold">
+          Special menu for you
+        </h2>
+
+        <div id="specialGrid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Special 1 -->
+          <div
+            class="card flex flex-col gap-2 rounded-2xl p-3 bg-white shadow-xl">
+
+            <div class="relative">
+              <img src="./src/assets/img_product (6).png" alt="Hot Milk"
+                class="w-full">
+              <span
+                class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                4.8
+              </span>
+            </div>
+
+            <div
+              class="content font-semibold text-lg flex justify-between items-center">
+              <span>Hot Milk</span>
+              <span>21k</span>
+            </div>
+
+            <div class="btn flex justify-between items-center">
+              <div class="btn_left flex gap-2 text-xs">
+                Hot Milk with less sugar
+              </div>
+
+              <button type="button" aria-label="Add Hot Milk to cart"
+                class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                <i data-lucide="shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Special 2 -->
+          <div
+            class="card flex flex-col gap-2 rounded-2xl p-3 bg-white shadow-xl">
+
+            <div class="relative">
+              <img src="./src/assets/img_product (5).png" alt="Sandwich"
+                class="w-full">
+              <span
+                class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                4.8
+              </span>
+            </div>
+
+            <div
+              class="content font-semibold text-lg flex justify-between items-center">
+              <span>Sandwich</span>
+              <span>21k</span>
+            </div>
+
+            <div class="btn flex justify-between items-center">
+              <div class="btn_left flex gap-2 text-xs">
+                Bread with meat and vegetables
+              </div>
+
+              <button type="button" aria-label="Add Sandwich to cart"
+                class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                <i data-lucide="shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Special 3 -->
+          <div
+            class="card flex flex-col gap-2 rounded-2xl p-3 bg-white shadow-xl">
+
+            <div class="relative">
+              <img src="./src/assets/img_product (4).png" alt="Waffle Ice Cream"
+                class="w-full">
+              <span
+                class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                4.8
+              </span>
+            </div>
+
+            <div
+              class="content font-semibold text-lg flex justify-between items-center">
+              <span>Waffle Ice Cream</span>
+              <span>21k</span>
+            </div>
+
+            <div class="btn flex justify-between items-center">
+              <div class="btn_left flex gap-2 text-xs">
+                Waffle with ice cream
+              </div>
+
+              <button type="button" aria-label="Add Waffle to cart"
+                class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                <i data-lucide="shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Special 4 -->
+          <div
+            class="card flex flex-col gap-2 rounded-2xl p-3 bg-white shadow-xl">
+
+            <div class="relative">
+              <img src="./src/assets/img_product (3).png" alt="Cappuccino"
+                class="w-full">
+              <span
+                class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                4.8
+              </span>
+            </div>
+
+            <div
+              class="content font-semibold text-lg flex justify-between items-center">
+              <span>Cappuccino</span>
+              <span>21k</span>
+            </div>
+
+            <div class="btn flex justify-between items-center">
+              <div class="btn_left flex gap-2 text-xs">
+                Hot Cappuccino
+              </div>
+
+              <button type="button" aria-label="Add Cappuccino to cart"
+                class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                <i data-lucide="shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Special 5 -->
+          <div
+            class="card flex flex-col gap-2 rounded-2xl p-3 bg-white shadow-xl">
+
+            <div class="relative">
+              <img src="./src/assets/unsplash_SqYmTDQYMjo.png" alt="Moccacino"
+                class="w-full">
+              <span
+                class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                4.8
+              </span>
+            </div>
+
+            <div
+              class="content font-semibold text-lg flex justify-between items-center">
+              <span>Moccacino</span>
+              <span>21k</span>
+            </div>
+
+            <div class="btn flex justify-between items-center">
+              <div class="btn_left flex gap-2 text-xs">
+                Hot Moccacino
+              </div>
+
+              <button type="button" aria-label="Add Moccacino to cart"
+                class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                <i data-lucide="shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Special 6 -->
+          <div
+            class="card flex flex-col gap-2 rounded-2xl p-3 bg-white shadow-xl">
+
+            <div class="relative">
+              <img src="./src/assets/img_product (7).png" alt="Coffee Ice Cream"
+                class="w-full">
+              <span
+                class="absolute top-2 left-2 bg-white text-xs border-2 border-[#F9D9AA]/30 px-2 py-0.5 rounded-3xl">
+                4.8
+              </span>
+            </div>
+
+            <div
+              class="content font-semibold text-lg flex justify-between items-center">
+              <span>Coffee Ice Cream</span>
+              <span>21k</span>
+            </div>
+
+            <div class="btn flex justify-between items-center">
+              <div class="btn_left flex gap-2 text-xs">
+                Coffee with vanilla ice cream
+              </div>
+
+              <button type="button" aria-label="Add Coffee Ice Cream to cart"
+                class="add-cart bg-[#FF902A] text-white p-2 rounded-full">
+                <i data-lucide="shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= TESTIMONIALS ================= -->
+      <section class="testimonials-section py-20 px-5 overflow-hidden">
+
+        <div class="max-w-6xl mx-auto relative">
+
+          <div
+            class="testimonials-bg relative bg-[#F7EBDD] rounded-2xl w-full min-h-[270px] md:w-[65%] p-8 md:p-12">
+
+            <div class="relative z-10 max-w-[250px] pt-8 md:pt-12">
+
+              <h2 class="text-xl font-bold text-black mb-3">
+                What they say about us
+              </h2>
+
+              <p class="text-gray-500 text-xs leading-relaxed">
+                We always provide the best service and maintain the quality of
+                our coffee.
+              </p>
+
+            </div>
+          </div>
+
+          <div
+            class="testimonials-cards flex gap-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-[35%] md:right-0 relative mt-10 md:mt-0 overflow-x-auto pb-8">
+
+            <!-- Card 1 -->
+            <div class="testimonial-card shrink-0 w-[150px] relative">
+
+              <div class="border-4 border-[#FFE0B2] p-1 bg-white">
+                <img src="./src/assets/person.png" alt="Naura"
+                  class="w-full h-[155px] object-cover">
+              </div>
+
+              <div
+                class="absolute -bottom-1 left-3 w-[130px] bg-[#FFD28F] border-4 border-[#FFE5B9] rounded-lg p-2 shadow-md">
+                <h3 class="text-xs font-semibold text-black">Naura</h3>
+                <p class="text-[10px] leading-tight text-black mt-1">
+                  I really love the cappuccino, the coffee was very smooth.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="testimonial-card shrink-0 w-[145px] relative">
+
+              <div class="border-4 border-[#FFE0B2] p-1 bg-white">
+                <img src="./src/assets/person2.png" alt="John"
+                  class="w-full h-[155px] object-cover">
+              </div>
+
+              <div
+                class="absolute -bottom-1 left-3 w-[130px] bg-[#FFD28F] border-4 border-[#FFE5B9] rounded-lg p-2 shadow-md">
+                <h3 class="text-xs font-semibold text-black">John</h3>
+                <p class="text-[10px] leading-tight text-black mt-1">
+                  This coffee shop is very convenient.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="testimonial-card shrink-0 w-[145px] relative">
+
+              <div class="border-4 border-[#FFE0B2] p-1 bg-white">
+                <img src="./src/assets/person1.png" alt="Azura"
+                  class="w-full h-[155px] object-cover">
+              </div>
+
+              <div
+                class="absolute -bottom-1 left-3 w-[130px] bg-[#FFD28F] border-4 border-[#FFE5B9] rounded-lg p-2 shadow-md">
+                <h3 class="text-xs font-semibold text-black">Azura</h3>
+                <p class="text-[10px] leading-tight text-black mt-1">
+                  The coffee menu here is very much.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div
+            class="flex justify-center gap-2 mt-3 md:absolute md:left-[55%] md:bottom-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FF902A]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FFE0B2]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FFE0B2]"></span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= SUBSCRIBE ================= -->
+      <section class="px-6 md:px-12 pb-12">
+
+        <div
+          class="relative overflow-hidden rounded-3xl bg-ink px-6 py-14 text-center text-white min-h-[280px]">
+
+          <div
+            class="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_80%_90%,#f7941d,transparent_50%)]">
+            <img src="./src/assets/unsplash.png" alt
+              class="w-full h-full object-cover">
+          </div>
+
+          <h2 class="relative text-xl font-semibold">
+            Subscribe to get 50% discount price
+          </h2>
+
+          <form id="subForm" class="relative mx-auto mt-5 flex max-w-sm gap-2">
+
+            <input id="subEmail"
+              type="email"
+              required
+              placeholder="Email address"
+              class="min-w-0 flex-1 rounded-md bg-white px-3 py-2 text-xs text-ink outline-none focus:ring-2 focus:ring-brand">
+
+            <button type="submit"
+              class="rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand-dark transition">
+              Subscribe
+            </button>
+
+          </form>
+
+          <p id="subMsg"
+            class="relative mt-3 min-h-4 text-[11px] text-brand"></p>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ================= TOAST ================= -->
+    <div id="toast"
+      class="pointer-events-none fixed bottom-6 left-1/2 z-[80] -translate-x-1/2 translate-y-6 rounded-full bg-ink px-5 py-2 text-xs text-white opacity-0 shadow-lg transition-all duration-300">
+    </div>
+
+    <!-- ================= CART DRAWER ================= -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+
+      <div id="closeCartBg" class="absolute inset-0 bg-black/50"></div>
+
+      <div
+        class="absolute right-0 top-0 h-full w-full max-w-sm bg-white p-6 shadow-xl overflow-y-auto">
+
+        <div class="flex justify-between items-center mb-6">
+
+          <h2 class="text-xl font-bold">
+            Your Cart
+          </h2>
+
+          <button id="closeCart" type="button" aria-label="Close cart">
+            <i data-lucide="x"></i>
+          </button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="border-t mt-6 pt-4">
+
+          <div class="flex justify-between font-bold">
+            <span>Total</span>
+            <span id="cartTotal">0k</span>
+          </div>
+
+          <button id="orderNowBtn"
+            type="button"
+            disabled
+            class="w-full mt-5 rounded-full bg-[#FF902A] py-3 text-sm font-semibold text-white transition hover:bg-[#e8820c] disabled:cursor-not-allowed disabled:opacity-50">
+            Order Now
+          </button>
+
+          <p class="text-center text-xs text-gray-400 mt-3">
+            Pickup from our cafe
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= CHECKOUT MODAL ================= -->
+    <div id="checkoutModal"
+      class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/50 p-4">
+
+      <div
+        class="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl">
+
+        <div class="mb-5 flex items-center justify-between">
+
+          <h2 class="text-xl font-bold">
+            Complete Your Order
+          </h2>
+
+          <button id="closeCheckout"
+            type="button"
+            aria-label="Close checkout"
+            class="text-gray-500 hover:text-black">
+            <i data-lucide="x"></i>
+          </button>
+
+        </div>
+
+        <p class="mb-5 text-sm text-gray-500">
+          Enter your details and pick up your order from our cafe.
+        </p>
+
+        <!-- ORDER SUMMARY -->
+        <div class="mb-6 rounded-xl bg-[#fdf3e3] p-4">
+
+          <h3 class="mb-3 font-semibold">
+            Your Order
+          </h3>
+
+          <div id="checkoutSummary" class="space-y-3"></div>
+
+          <div
+            class="mt-4 flex justify-between border-t border-black/10 pt-3 font-bold">
+
+            <span>Total</span>
+
+            <span id="checkoutTotal">
+              0k
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- CUSTOMER FORM -->
+        <form id="checkoutForm" class="space-y-4">
+
+          <div>
+
+            <label for="customerName" class="mb-1 block text-sm font-medium">
+              Full Name
+            </label>
+
+            <input id="customerName"
+              name="customer_name"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="Enter your name"
+              class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-[#FF902A]">
+
+          </div>
+
+          <div>
+
+            <label for="customerPhone" class="mb-1 block text-sm font-medium">
+              Phone Number
+            </label>
+
+            <input id="customerPhone"
+              name="phone"
+              type="tel"
+              required
+              autocomplete="tel"
+              placeholder="01xxxxxxxxx"
+              class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-[#FF902A]">
+
+          </div>
+
+          <div>
+
+            <label for="customerEmail" class="mb-1 block text-sm font-medium">
+              Email Address (Optional)
+            </label>
+
+            <input id="customerEmail"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="example@email.com"
+              class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-[#FF902A]">
+
+          </div>
+
+          <div>
+
+            <label for="orderNotes" class="mb-1 block text-sm font-medium">
+              Order Notes (Optional)
+            </label>
+
+            <textarea id="orderNotes"
+              name="order_notes"
+              rows="3"
+              placeholder="Any special requests?"
+              class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-[#FF902A]"></textarea>
+
+          </div>
+
+          <input type="hidden" name="order_type" value="Pickup">
+
+          <button id="confirmOrderBtn"
+            type="submit"
+            class="w-full rounded-full bg-[#FF902A] py-3 text-sm font-semibold text-white transition hover:bg-[#e8820c]">
+
+            Confirm Order
+
+          </button>
+
+          <p id="checkoutMessage"
+            class="text-center text-sm"
+            aria-live="polite">
+          </p>
+
+        </form>
+
+      </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="./src/script.js"></script>
+
+    <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+
+  </body>
+</html>
